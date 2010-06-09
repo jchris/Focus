@@ -1,12 +1,13 @@
 <ul>
   {{#items}}
-    <li>
+    <li data-id="{{id}}">
       <div class="item">
         <div class="ava">
           {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
         </div>
         <div class="message">{{message}}</div>
       </div>
+      <div style="clear:left;"></div>
       <div class="menu">
         <a href="#done">done</a>
         <a href="#skip">skip</a>

@@ -26,7 +26,7 @@ h1 {
 }
 
 #items li {
-  font-size:2em;
+  font-size:1.4em;
   margin:0.75em 0;
   padding:8px;
   -webkit-transition-property:background-color;
@@ -37,14 +37,19 @@ h1 {
   background:#bbb;
 }
 
-#items li input, #items li .message {
+#items li .message {
+  min-height:1.2em;
+}
+
+#items li input {
   border:none;
-  height:1.2em;
+  height:1em;
+  font-size:1.8em;
 }
 
 #items .item {
   background:#eee;
-  border:2px solid #aaa;
+  border:2px solid #ddd;
 }
 
 #profile .item {
@@ -55,15 +60,21 @@ h1 {
   border:4px solid #f5f5ff;
   background:#eef;
   padding:8px;
-  margin-bottom:8px;
 }
 
 .menu {
   font-size:14px;
+  padding:0px 4px;
+  margin-left:1.2em;
 }
 
 .menu a {
-  padding:4px 8px;
+  padding:8px;
+  color:#99d;
+}
+
+.menu a[href="#edit"] {
+  float:right;
 }
 
 .ava {
