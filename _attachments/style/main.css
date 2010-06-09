@@ -42,6 +42,14 @@ h1 {
   margin:4px 0;
 }
 
+#items li input {
+  font-size:2.2em;
+}
+
+#items li .message {
+  font-size:2.5em;
+}
+
 form {
   padding:4px;
   margin:6px;
