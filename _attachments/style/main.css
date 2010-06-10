@@ -15,7 +15,6 @@ h1 {
 
 
 #items {
-/*  background:#777;*/
   width:100%;
 }
 
@@ -26,19 +25,11 @@ h1 {
 }
 
 #items li {
-  font-size:1.4em;
   margin:0.75em 0;
-  padding:8px;
-  -webkit-transition-property:background-color;
-  -webkit-transition-duration:0.5s;
-}
-
-#items li:hover {
-  background:#bbb;
 }
 
 #items li .message {
-  min-height:1.2em;
+  padding:2px;
 }
 
 #items li input {
@@ -48,6 +39,7 @@ h1 {
 }
 
 #items .item {
+  min-height:40px;
   background:#eee;
   border:2px solid #ddd;
 }
@@ -65,15 +57,14 @@ h1 {
 .menu {
   font-size:14px;
   padding:0px 4px;
-  margin-left:1.2em;
 }
 
 .menu a {
-  padding:8px;
-  color:#99d;
+  padding:0 4px;
+  color:#88d;
 }
 
-.menu a[href="#edit"] {
+.menu a[href="#details"] {
   float:right;
 }
 
@@ -83,7 +74,7 @@ h1 {
 }
 
 .ava img {
-  height:1.2em;
+  height:40px;
   margin:0 auto;
   padding:0;
 }
