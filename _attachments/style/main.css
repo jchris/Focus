@@ -49,12 +49,13 @@ h1 {
 }
 
 #items .item.skip {
-  background-color:#ccc;
+  background-color:#fff;
+  color:#888;
 }
 
 #items .item.someday {
-  background-color:#fff;
-  color:#888;
+  background-color:#ccc;
+  color:#555;
 }
 
 #items .item.blocked {

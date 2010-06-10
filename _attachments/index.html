@@ -11,15 +11,28 @@
     <h1>Focus</h1>
 
     <div id="profile"></div>
+    
+    <div id="nav">
+      Show:
+      <a href="#/state/all">all</a>
+      <a href="#/state/open">open</a>
+      <a href="#/state/done">done</a>
+      <a href="#/state/skip">skipped</a>
+      <a href="#/state/someday">someday</a>
+      <a href="#/state/blocked">blocked</a>
+    </div>
+    
     <div id="items"></div>
   </body>
   <script src="vendor/couchapp/loader.js"></script>
+  <script src="vendor/couchapp/jquery.pathbinder.js"></script>
   <script type="text/javascript" charset="utf-8">
     $.couch.app(function(app) {
       $("#account").evently("account", app);
       $("#profile").evently("profile", app);
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
       $("#items").evently("items", app);
+      $.pathbinder.begin("/state/open");
     });
   </script>
 </html>
