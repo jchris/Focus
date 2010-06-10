@@ -31,8 +31,10 @@
       $("#account").evently("account", app);
       $("#profile").evently("profile", app);
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
-      $("#items").evently("items", app);
-      $.pathbinder.begin("/state/open");
+      $("#account").bind("loggedIn", function(e, r) {
+        $("#items").evently("items", app);
+        $.pathbinder.begin("/items/"+encodeURIComponent(r.userCtx.name));
+      });
     });
   </script>
 </html>
