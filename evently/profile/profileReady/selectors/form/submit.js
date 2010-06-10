@@ -3,7 +3,9 @@ function() {
   var doc = {
     created_at : new Date(),
     profile : $$("#profile").profile,
-    message : $("[name=message]", form).val()
+    message : $("[name=message]", form).val(),
+    state : "open",
+    type : "task"
   };
   $$(this).app.db.saveDoc(doc, {
     success : function() {

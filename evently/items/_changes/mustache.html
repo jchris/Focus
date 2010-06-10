@@ -1,7 +1,7 @@
 <ul>
   {{#items}}
     <li data-id="{{id}}">
-      <div class="item">
+      <div class="item {{state}}">
         <div class="ava">
           {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
         </div>
@@ -12,7 +12,7 @@
         <a href="#done">done</a>
         <a href="#skip">skip</a>
         <a href="#someday">someday</a>
-        <a href="#blocking">blocked</a>
+        <a href="#blocked">blocked</a>
         <a href="#details">details</a>
       </div>
       <div style="clear:left;"></div>

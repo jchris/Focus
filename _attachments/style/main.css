@@ -44,6 +44,23 @@ h1 {
   border:2px solid #ddd;
 }
 
+#items .item.done {
+  background-color:#cfb;
+}
+
+#items .item.skip {
+  background-color:#ccc;
+}
+
+#items .item.someday {
+  background-color:#fff;
+  color:#888;
+}
+
+#items .item.blocked {
+  background-color:#fb8;
+}
+
 #profile .item {
   font-size:2em;
 }
