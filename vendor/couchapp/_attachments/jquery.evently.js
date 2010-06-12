@@ -98,7 +98,7 @@ function $$(node) {
     $$(elem).evently = events;
     // setup the handlers onto elem
     forIn(events, function(name, h) {
-      eventlyHandler(elem, name, h, args);
+      eventlyHandler(elem, name, h, app, args);
     });
     
     if (events._init) {
@@ -111,7 +111,7 @@ function $$(node) {
         // we want to unbind this function when the element is deleted.
         // maybe jquery 1.4.2 has this covered?
         // $.log('changes', elem);
-        elem.trigger("_changes");        
+        elem.trigger("_changes");
       });
       followChanges(app);
       elem.trigger("_changes");
@@ -120,9 +120,15 @@ function $$(node) {
   
   // eventlyHandler applies the user's handler (h) to the 
   // elem, bound to trigger based on name.
-  function eventlyHandler(elem, name, h, args) {
+  function eventlyHandler(elem, name, h, app, args) {
     if (h.path) {
       elem.pathbinder(name, h.path);
+    }
+    if (h.changes) {
+      $("body").bind("evently.changes."+app.db.name, function() {
+        elem.trigger(name);        
+      });
+      followChanges(app);
     }
     var f = funViaString(h);
     if (typeof f == "function") {
@@ -135,7 +141,7 @@ function $$(node) {
     } else if ($.isArray(h)) { 
       // handle arrays recursively
       for (var i=0; i < h.length; i++) {
-        eventlyHandler(elem, name, h[i], args);
+        eventlyHandler(elem, name, h[i], app, args);
       }
     } else {
       // an object is using the evently / mustache template system
