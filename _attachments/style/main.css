@@ -48,6 +48,10 @@ h1 {
   background-color:#cfb;
 }
 
+#items .item.active {
+  background-color:#ff9;
+}
+
 #items .item.skip {
   background-color:#fff;
   color:#888;
