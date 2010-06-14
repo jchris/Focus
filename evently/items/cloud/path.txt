@@ -1,0 +1,3 @@
+/tagcloud
+/tagcloud/:user
+/tagcloud/:user/:state
