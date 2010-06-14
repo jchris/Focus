@@ -89,6 +89,10 @@ li input {
   float:right;
 }
 
+.menu .edit {
+  display:none;
+}
+
 .ava {
   float:left;
   margin-right:4px;
