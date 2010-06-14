@@ -11,16 +11,8 @@
     <h1>Focus</h1>
 
     <div id="profile"></div>
+    <div id="nav"></div>
     
-    <div id="nav">
-      Views:
-      <a href="#/items/all">all</a>
-      <a href="#/items/open">open</a>
-      <a href="#/items/done">done</a>
-      <a href="#/items/skip">skipped</a>
-      <a href="#/items/someday">someday</a>
-      <a href="#/items/blocked">blocked</a>
-    </div>
     <p>Click here to <a href="friday.html">compose your Friday Focus.</a></p>
     <div id="items"></div>
   </body>
@@ -33,6 +25,8 @@
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
       $("#account").bind("loggedIn", function(e, r) {
         $("#items").evently("items", app);
+        $("#nav").evently("nav", app);
+        $.evently.connect("#items","#nav", ["list"]);
         $.pathbinder.begin("/items/"+encodeURIComponent(r.userCtx.name));
       });
     });
