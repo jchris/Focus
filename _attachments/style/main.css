@@ -14,55 +14,55 @@ h1 {
 }
 
 
-#items {
+#items, #active {
   width:100%;
 }
 
-#items ul {
+ul {
   list-style: none;
   margin:0;
   padding:0;
 }
 
-#items li {
+li {
   margin:0.75em 0;
 }
 
-#items li .message {
+li .message {
   padding:2px;
 }
 
-#items li input {
+li input {
   border:none;
   height:1em;
   font-size:1.8em;
 }
 
-#items .item {
+.item {
   min-height:40px;
   background:#dadada;
   border:2px solid #ddd;
 }
 
-#items .item.done {
+.item.done {
   background-color:#cfb;
 }
 
-#items .item.active {
+.item.active {
   background-color:#ff9;
 }
 
-#items .item.skip {
+.item.skip {
   background-color:#fff;
   color:#888;
 }
 
-#items .item.someday {
+.item.someday {
   background-color:#ccc;
   color:#555;
 }
 
-#items .item.blocked {
+.item.blocked {
   background-color:#fb8;
 }
 

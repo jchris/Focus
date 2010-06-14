@@ -10,6 +10,8 @@ function() {
     app.db.openDoc(id, {
       success : function(doc) {
         doc.state = action;
+        doc.state_at = new Date();
+        doc.state_by = $("#account a[target=_new]").text();
         app.db.saveDoc(doc);
       }
     });

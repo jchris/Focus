@@ -1,0 +1,27 @@
+<ul>
+  {{#items}}
+    <li data-id="{{id}}">
+      <div class="item {{state}}">
+        <div class="ava">
+          {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
+        </div>
+        <div class="message">{{message}}</div>
+      </div>
+      <div style="clear:left;"></div>
+      <div class="menu">
+        <a href="#done">done</a>
+        <a href="#active">active</a>
+        <a href="#skip">skip</a>
+        <a href="#someday">someday</a>
+        <a href="#blocked">blocked</a>
+        <div class="edit">
+          <a href="#cc">cc</a>
+          <a href="#edit">edit</a>
+          <a href="#comments">comments</a>
+          history: <a href="#older">older</a> {{rev_num}} <a href="#newer">newer</a>
+        </div>
+      </div>
+      <div style="clear:left;"></div>
+    </li>
+  {{/items}}
+</ul>

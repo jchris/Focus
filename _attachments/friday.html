@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Share your Focus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="account"></div>
+
+    <h1>Friday Focus</h1>
+    
+    <p>Click here to <a href="index.html">get back to work.</a></p>
+    
+    <h3>What is the Friday Focus?</h3>
+    
+    <p>Each week, we go through our focus items, and decide which ones to share with the team. To select an item, click the main text, and it will highlight. Those items rule.</p>
+    
+    <h3>Here are your currently active focus items. Select which items to share.</h3>
+    <div id="active"></div>
+
+    <h3>Done this week:</h3>
+    <div id="done"></div>
+
+    <h3>Block an item if you need help from someone else to finish it.</h3>
+    <div id="blocked"></div>
+
+    <h3>New this week:</h3>
+    <div id="new"></div>
+
+    <h3>Get a <a href="#/preview">preview of your Friday Focus</a>.</h3>
+    <div id="preview"></div>
+
+  </body>
+  <script src="vendor/couchapp/loader.js"></script>
+  <script src="vendor/couchapp/jquery.pathbinder.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $.couch.app(function(app) {
+      $("#account").evently("account", app);
+      $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+      $("#account").bind("loggedIn", function(e, r) {
+        $("#active").evently("active", app);
+        $("#items").evently("items", app);
+        $.pathbinder.begin("/items/"+encodeURIComponent(r.userCtx.name));
+      });
+    });
+  </script>
+</html>

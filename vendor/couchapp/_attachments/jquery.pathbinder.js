@@ -79,6 +79,7 @@
             params.splat.push(param);
           }
         };
+        $.log("path: "+path+" params: ", params);
         // $.log("path trigger for "+path);
         pathSpec.callback(params);
         // return true; // removed this to allow for multi match
