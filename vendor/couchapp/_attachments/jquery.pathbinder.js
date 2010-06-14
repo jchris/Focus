@@ -79,8 +79,7 @@
             params.splat.push(param);
           }
         };
-        $.log("path: "+path+" params: ", params);
-        // $.log("path trigger for "+path);
+        // $.log("trigger path: "+path+" params: ", params);
         pathSpec.callback(params);
         // return true; // removed this to allow for multi match
       }
@@ -131,7 +130,7 @@
       param_names : param_names,
       matcher : new RegExp(path.replace(
         PATH_NAME_MATCHER, PATH_REPLACER).replace(
-        SPLAT_MATCHER, SPLAT_REPLACER) + "$"),
+        SPLAT_MATCHER, SPLAT_REPLACER) + "/?$"),
       template : path.replace(PATH_NAME_MATCHER, function(a, b) {
         return '{{'+b+'}}';
       }).replace(SPLAT_MATCHER, '{{splat}}'),
