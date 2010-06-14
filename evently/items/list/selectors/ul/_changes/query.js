@@ -4,8 +4,8 @@ function() {
   // /items/jchris/open
   // /items/_all/done
   // /items/amysue
-  var route = arguments[0].data.args[1].splat;
-  $.log(route);
+  var params = arguments[0].data.args[1];
+  $.log(params);
   function stateView(state) {
     var name = $("#account a[target=_new]").text();
     return {

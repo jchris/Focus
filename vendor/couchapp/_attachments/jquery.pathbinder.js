@@ -139,20 +139,27 @@
     };
   };
 
-  $.fn.pathbinder = function(name, path) {
+  $.fn.pathbinder = function(name, paths) {
     var self = $(this);
-    var pathSpec = makePathSpec(path, function(params) {
-      $.log("path cb", name, path, self)
-      self.trigger(name, [params]);
+    var pathList = paths.split(/\n/);
+    $.each(pathList, function() {
+      var path = this;
+      if (path) {
+        // $.log("bind path", path);
+        var pathSpec = makePathSpec(path, function(params) {
+          // $.log("path cb", name, path, self)
+          self.trigger(name, [params]);
+        });
+        self.bind(name, function(ev, params) {
+          params = params || {};
+          // set the path when triggered
+          // $.log("set path", name, pathSpec)
+          setPath(pathSpec, params);
+        });
+        // trigger when the path matches
+        registerPath(pathSpec);
+      }
     });
-    self.bind(name, function(ev, params) {
-      params = params || {};
-      // set the path when triggered
-      // $.log("set path", name, pathSpec)
-      setPath(pathSpec, params);
-    });
-    // trigger when the path matches
-    registerPath(pathSpec);
   };
 })(jQuery);
   
