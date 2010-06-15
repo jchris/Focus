@@ -25,8 +25,8 @@
     <h3>Block an item if you need help from someone else to finish it.</h3>
     <div id="blocked"></div>
 
-    <h3>New this week:</h3>
-    <div id="new"></div>
+    <h3>Open items:</h3>
+    <div id="open"></div>
 
     <h3>Get a <a href="#/preview">preview of your Friday Focus</a>.</h3>
     <div id="preview"></div>
@@ -39,9 +39,11 @@
       $("#account").evently("account", app);
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
       $("#account").bind("loggedIn", function(e, r) {
-        $("#active").evently("active", app);
-        $("#items").evently("items", app);
-        $.pathbinder.begin("/items/"+encodeURIComponent(r.userCtx.name));
+        $(["active", "done", "blocked", "open"]).each(function() {
+          $("#"+this).evently("items", app);
+          // todo, a param that sets the endkey so you only get stuff that's been modified this week
+          $("#"+this).trigger("list", {user: r.userCtx.name, state : this, friday : true});          
+        });
       });
     });
   </script>

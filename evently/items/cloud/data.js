@@ -1,6 +1,6 @@
 function(resp, e, params) {
   return {
-    cloud : resp.rows.map(function(r) {
+    cloud : $.map(resp.rows, function(r) {
       var word = r.key.pop();
       return {
         word : word,

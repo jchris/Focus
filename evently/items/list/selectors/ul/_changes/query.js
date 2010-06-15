@@ -1,9 +1,9 @@
-function() {
+function(e) {
   // /items/:user/[:state]
   // /items/jchris/open
   // TODO /items/_all/done
   // /items/amysue
-  var params = arguments[0].data.args[1];
+  var params = e.data.args[1];
   $.log(params.user, params.state);
   if (params.user) {
     if (params.state) {

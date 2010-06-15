@@ -1,5 +1,5 @@
 function(e, params) {
-  if (params.user) {
+  if (params.user && params.user !== "_all") {
     return {
       "view" : "user-tagcloud",
       "startkey" : [params.user],
