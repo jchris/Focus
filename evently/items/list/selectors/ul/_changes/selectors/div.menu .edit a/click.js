@@ -10,23 +10,21 @@ function() {
       var val = $(m).text();
       $(m).replace('<form><input type="text" value="'+val+'"><input type="submit" value="Save"></form>');
       $("input",li).focus();
-      setTimeout(function() {
-        $("form",li).submit(function() {
-          var form = $(this);
-          var nval = $("input",this).val();
-          app.db.openDoc(id, {
-            success : function(doc) {
-              doc.message = nval;
-              app.db.saveDoc(doc, {
-                success : function() {
-                  form.replace(nval);
-                }
-              })
-            }
-          });
-          return false;
+      $("form",li).submit(function() {
+        var form = $(this);
+        var nval = $("input",this).val();
+        app.db.openDoc(id, {
+          success : function(doc) {
+            doc.message = nval;
+            app.db.saveDoc(doc, {
+              success : function() {
+                form.replace(nval);
+              }
+            })
+          }
         });
-      }, 5000);
+        return false;
+      });
     }
 
   } else {
