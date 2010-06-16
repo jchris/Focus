@@ -31,10 +31,14 @@ li .message {
   padding:2px;
 }
 
-li input {
+li input[type=text] {
   border:none;
-  height:1em;
-  font-size:1.8em;
+  font-size:1em;
+  width:75%;
+}
+
+.item form {
+  padding:0;margin:0;
 }
 
 .item {
@@ -80,6 +84,13 @@ li input {
   padding:0px 4px;
 }
 
+.menu .states {
+  float:left;
+}
+.menu .edit {
+  float:right;
+}
+
 .menu a {
   padding:0 4px;
   color:#88d;
@@ -90,7 +101,7 @@ li input {
 }
 
 .menu .edit {
-  display:none;
+/*  display:none;*/
 }
 
 .ava {
