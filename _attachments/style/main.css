@@ -32,13 +32,8 @@ li .message {
 }
 
 input[type=text] {
-/*  border:none;*/
   font-size:1em;
-  width:95%;
-}
-
-.item form {
-  padding:0;margin:0;
+  width:90%;
 }
 
 .item {
@@ -104,7 +99,7 @@ input[type=text] {
 form {
   padding:4px;
   margin:6px;
-  background-color:#ddd;
+/*  background-color:#ddd;*/
 }
 
 .small {

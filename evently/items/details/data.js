@@ -8,7 +8,7 @@ function(doc) {
     statesView.push(s);
   };
   doc.states = statesView;
-  $.log(doc.publish)
+  doc.gravatar_url = doc.profile.gravatar_url;
   doc.checked = doc.publish ? "checked" : "";
   return doc;
 };
