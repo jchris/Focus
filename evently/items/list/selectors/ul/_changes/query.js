@@ -4,7 +4,6 @@ function(e) {
   // TODO /items/_all/done
   // /items/amysue
   var params = e.data.args[1];
-  $.log(params.user, params.state);
   if (params.user) {
     if (params.state) {
       return {

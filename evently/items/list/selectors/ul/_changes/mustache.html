@@ -1,6 +1,6 @@
 {{#items}}
   <li data-id="{{id}}">
-    <div class="item {{state}} {{friday}}">
+    <div class="item {{state}} {{shared}}">
       <div class="ava">
         {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
       </div>
@@ -17,6 +17,7 @@
         <a href="#blocked" title="depends on another task or someone else">blocked</a>
       </div>
       <div class="edit">
+        <a href="#share">share</a>
         <a href="#edit">edit</a>
         <!-- <a href="#cc">cc</a>
         <a href="#comments">comments</a>

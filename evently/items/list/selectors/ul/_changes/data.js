@@ -1,14 +1,16 @@
 function(data, e) {
   var p, params = e.data.args[1];
+  var thisWeek = "06/21/2010"; // next monday
   return {
     // move this code to the view for better performance due to less data on disk.  
     items : $.map(data.rows, function(r) {
-      p = r.value.profile;
-      p.rev = r.value._rev;
-      p.message = r.value.message;
-      p.state = r.value.state || "open";
+      var doc = r.value;
+      p = doc.profile;
+      p.rev = doc._rev;
+      p.message = doc.message;
+      p.state = doc.state || "open";
       p.id = r.id;
-      p.friday = params.friday;
+      p.shared = doc.shared && doc.shared[params.user] && doc.shared[params.user][thisWeek] && "shared";
       return p;
     })
   }
