@@ -84,40 +84,10 @@ input[type=text] {
   background-color:#fb8;
 }
 
-#profile .item {
-  font-size:2em;
-}
-
 #profile {
   border:4px solid #f5f5ff;
   background:#eef;
   padding:8px;
-}
-
-.menu {
-  font-size:14px;
-  padding:0px 4px;
-  display:none;
-}
-
-.menu .states {
-  float:left;
-}
-.menu .edit {
-  float:right;
-}
-
-.menu a {
-  padding:0 4px;
-  color:#88d;
-}
-
-.menu a[href="#details"] {
-  float:right;
-}
-
-.menu .edit {
-/*  display:none;*/
 }
 
 .ava {
@@ -135,7 +105,10 @@ form {
   padding:4px;
   margin:6px;
   background-color:#ddd;
-  font-size:14px;
+}
+
+.small {
+  font-size:0.8em;
 }
 
 div.avatar {
