@@ -1,5 +1,5 @@
 function(doc) {
-  if (doc.message) {
+  if (doc.message && doc.created_at) {
     var words = {};
     doc.message.replace(/\#([\S\-\.]*[\w]+[\S\-\.]*)/g, function(tag, word) {
       words[word.toLowerCase()] = true;

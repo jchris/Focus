@@ -47,29 +47,29 @@ li input[type=text] {
   border:2px solid #ddd;
 }
 
-.item.shared {
+.shared {
   border:2px solid #4d4;
 }
 
-.item.done {
+.done {
   background-color:#cfb;
 }
 
-.item.active {
+.active {
   background-color:#ff9;
 }
 
-.item.remove {
+.remove {
   background-color:#fff;
   color:#888;
 }
 
-.item.someday {
+.someday {
   background-color:#ccc;
   color:#555;
 }
 
-.item.blocked {
+.blocked {
   background-color:#fb8;
 }
 
