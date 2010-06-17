@@ -6,10 +6,16 @@ function(e) {
     d = form.parents(".details"),
     id = d.attr("data-id"),
     rev = d.attr("data-rev");
+
   app.db.openDoc(id, {
     success : function(doc) {
       doc.state = f.state;
-      doc._rev = rev;
+      if ($("[name=publish]:checked", form).length > 0) {
+        doc.publish = true;
+      } else {
+        doc.publish = false;
+      }
+      doc._rev = rev; // mvcc!
       doc.state_at = new Date();
       doc.state_by = $("#account a[target=_new]").text();
       app.db.saveDoc(doc, {

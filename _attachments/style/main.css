@@ -31,8 +31,8 @@ li .message {
   padding:2px;
 }
 
-li input[type=text] {
-  border:none;
+input[type=text] {
+/*  border:none;*/
   font-size:1em;
   width:95%;
 }
@@ -43,6 +43,10 @@ li input[type=text] {
 
 .item {
   min-height:40px;
+}
+
+.details {
+  padding:4px;
 }
 
 .item, .details {

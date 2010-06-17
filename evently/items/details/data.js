@@ -8,5 +8,7 @@ function(doc) {
     statesView.push(s);
   };
   doc.states = statesView;
+  $.log(doc.publish)
+  doc.checked = doc.publish ? "checked" : "";
   return doc;
 };
