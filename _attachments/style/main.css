@@ -43,8 +43,15 @@ li input[type=text] {
 
 .item {
   min-height:40px;
+}
+
+.item, .details {
+  border:2px solid #aaf;
   background:#dadada;
-  border:2px solid #ddd;
+}
+
+.item.noshare, .details.noshare {
+  border:2px solid #faa;
 }
 
 .shared {

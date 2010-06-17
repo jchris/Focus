@@ -1,4 +1,4 @@
-<div data-id="{{_id}}" class="details {{state}}">
+<div data-id="{{_id}}" data-rev={{_rev}} class="details {{state}}">
   <!-- todo include list view mustache here for consistency, with edit logic displayed below it. -->
   <h2 class="message"><span class="message">{{message}}</span></h2>
 
@@ -8,6 +8,14 @@
 <p>Add a Comment (if there are no comments yet)</p>
 
 <p>set state:</p>
+<form class="state">
+  <select name="state">
+    {{#states}}
+      <option value="{{state}}" {{selected}}>{{state}}</option>
+    {{/states}}
+  </select>
+  <p><input type="submit" value="Set State &rarr;"></p>
+</form>
 <p>done blocked</p>
 
 x focus
