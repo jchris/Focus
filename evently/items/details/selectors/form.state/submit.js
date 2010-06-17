@@ -9,13 +9,14 @@ function(e) {
 
   app.db.openDoc(id, {
     success : function(doc) {
-      doc.state = f.state;
       if ($("[name=publish]:checked", form).length > 0) {
         doc.publish = true;
       } else {
         doc.publish = false;
       }
       doc._rev = rev; // mvcc!
+      doc.message = f.message;
+      doc.state = f.state;
       doc.state_at = new Date();
       doc.state_by = $("#account a[target=_new]").text();
       app.db.saveDoc(doc, {
