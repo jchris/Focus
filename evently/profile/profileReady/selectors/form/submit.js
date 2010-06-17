@@ -9,8 +9,9 @@ function() {
     type : "task"
   };
   $$(this).app.db.saveDoc(doc, {
-    success : function() {
+    success : function(r) {
       $("[name=message]", form).val("");
+      $(".saved", form).html('<a href="#/details/'+r.id+'">'+doc.message+'</a> ');
     }
   });
   return false;
