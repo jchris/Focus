@@ -9,6 +9,7 @@ function(doc) {
   };
   doc.ownername = doc.profile.name;
   doc.states = statesView;
+  doc.lmessage = $.linkify($.mustache.escape(doc.message));
   doc.gravatar_url = doc.profile.gravatar_url;
   doc.checked = doc.publish ? "checked" : "";
   doc.publish = !doc.publish && "noshare";
