@@ -7,9 +7,10 @@ function(doc) {
     }
     statesView.push(s);
   };
+  doc.ownername = doc.profile.name;
   doc.states = statesView;
   doc.gravatar_url = doc.profile.gravatar_url;
   doc.checked = doc.publish ? "checked" : "";
-  doc .publish = !doc.publish && "noshare";
+  doc.publish = !doc.publish && "noshare";
   return doc;
 };
