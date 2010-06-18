@@ -7,6 +7,7 @@
 <a href="#/items/{{user}}/someday">someday</a>
 <a href="#/items/{{user}}/open">new</a>
 </p>
-{{#me}}
-<p><a href="#/items/{{me}}">see my items.</a></p>
-{{/me}}
+<p>
+  <a href="#/tags">browse by tags</a>
+  {{#me}}<a href="#/items/{{me}}">see my items</a>{{/me}}
+</p>

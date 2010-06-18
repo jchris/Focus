@@ -5,7 +5,7 @@ function(resp, e, params) {
       return {
         word : word,
         // todo use a new mustache delimiter for uri-encode
-        user_uri : encodeURIComponent(params.user),
+        // user_uri : encodeURIComponent(params.user),
         word_uri : encodeURIComponent(word),
         size : (r.value * 4) + 10
       };

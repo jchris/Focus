@@ -17,8 +17,8 @@ function(e) {
       doc._rev = rev; // mvcc!
       doc.message = f.message;
       doc.state = f.state;
-      doc.state_at = new Date();
-      doc.state_by = $("#account a[target=_new]").text();
+      doc.edit_at = new Date();
+      doc.edit_by = $("#account a[target=_new]").text();
       app.db.saveDoc(doc, {
         success : function() {
           form.trigger('details',[{id:id}]);
