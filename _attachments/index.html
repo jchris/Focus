@@ -42,7 +42,7 @@
         $("#items").evently("items", app);
         $("#nav").evently("nav", app);
         $.evently.connect("#items","#nav", ["list"]);
-        $.pathbinder.begin("/items/"+encodeURIComponent(r.userCtx.name));
+        $.pathbinder.begin("/focus");
       });
     });
   </script>

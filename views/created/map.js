@@ -1,5 +1,5 @@
 function(doc) {
-  if (doc.created_at) {
+  if (doc.publish && doc.created_at) {
     emit(doc.created_at, doc);
   }
 };

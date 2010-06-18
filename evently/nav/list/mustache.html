@@ -1,5 +1,5 @@
+<h3>Items by {{user}}</h3>
 <p>
-My items:
 <a href="#/items/{{user}}">all</a>
 <a href="#/items/{{user}}/done">done</a>
 <a href="#/items/{{user}}/active">active</a>
@@ -7,3 +7,6 @@ My items:
 <a href="#/items/{{user}}/someday">someday</a>
 <a href="#/items/{{user}}/open">new</a>
 </p>
+{{#me}}
+<p><a href="#/items/{{me}}">see my items.</a></p>
+{{/me}}
