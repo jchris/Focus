@@ -2,3 +2,4 @@
 /items/:user
 /items/:user/:state
 /tags/:tag
+/mentions/:mention

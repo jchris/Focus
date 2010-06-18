@@ -12,6 +12,14 @@ function(e) {
       descending : true,
       reduce : false
     };
+  } else if (params.mention) {
+    return {
+      view : "mentions",
+      endkey : [params.mention],
+      startkey: [params.mention, {}],
+      descending : true,
+      reduce : false
+    };
   } else {
     if (params.user) {
       if (params.state) {
@@ -42,7 +50,7 @@ function(e) {
           return {
             "view" : "focus-time",
             "descending" : true,
-            "limit" : 50
+            "limit" : 25
           };
         }
       }
@@ -50,7 +58,7 @@ function(e) {
       return {
         "view" : "focus-time",
         "descending" : true,
-        "limit" : 50
+        "limit" : 25
       };
     }
   }
