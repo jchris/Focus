@@ -7,7 +7,7 @@ function(data, e) {
       var doc = r.value;
       p = doc.profile;
       p.rev = doc._rev;
-      p.message = doc.message;
+      p.message = $.linkify($.mustache.escape(doc.message));
       p.state = doc.state || "open";
       p.id = r.id;
       p.publish = !doc.publish && "noshare";
