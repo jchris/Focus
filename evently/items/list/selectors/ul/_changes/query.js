@@ -15,7 +15,7 @@ function(e) {
         };        
       } else {
         return {
-          "view" : "focus",
+          "view" : "focus-state",
           "descending" : true,
           "endkey" : [params.state],
           "startkey" : [params.state, {}]
@@ -31,7 +31,7 @@ function(e) {
         };
       } else {
         return {
-          "view" : "focus",
+          "view" : "focus-time",
           "descending" : true
           // "limit" : 50
         };
@@ -39,7 +39,7 @@ function(e) {
     }
   } else {
     return {
-      "view" : "focus",
+      "view" : "focus-time",
       "descending" : true
       // "limit" : 50
     };
