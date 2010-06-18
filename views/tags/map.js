@@ -1,7 +1,7 @@
 function(doc) {
   if (doc.message && doc.created_at) {
     var words = {};
-    doc.message.replace(/\#([\S\-\.]*[\w]+[\S\-\.]*)/g, function(tag, word) {
+    doc.message.replace(/\#([\w\-\.]*[\w]+[\w\-\.]*)/g, function(tag, word) {
       words[word.toLowerCase()] = true;
     });
     for (var w in words) {
