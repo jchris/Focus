@@ -5,7 +5,7 @@ function(doc) {
       words[word.toLowerCase()] = true;
     });
     for (var w in words) {
-      emit([doc.profile.name, w, doc.created_at], doc);
+      emit([doc.profile.name, w, (doc.edit_at || doc.state_at || doc.created_at)], doc);
     }
   }
 }
