@@ -19,7 +19,7 @@ function(e) {
           history.go(-1);
         },
         error : function() {
-          $("#items").trigger('details',[{id:id}]);
+          history.go(-1);
         }
       });
     }

@@ -10,7 +10,7 @@ function(data, e) {
       p.message = doc.message;
       p.state = doc.state || "open";
       p.id = r.id;
-      p.shared = doc.shared && doc.shared[params.user] && doc.shared[params.user][thisWeek] && "shared";
+      p.publish = !doc.publish && "noshare";
       return p;
     })
   }
