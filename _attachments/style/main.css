@@ -65,14 +65,9 @@ input[type=text] {
   background-color:#ff9;
 }
 
-.remove {
+.someday {
   background-color:#fff;
   color:#888;
-}
-
-.someday {
-  background-color:#ccc;
-  color:#555;
 }
 
 .blocked {
@@ -83,6 +78,10 @@ input[type=text] {
   border:4px solid #f5f5ff;
   background:#eef;
   padding:8px;
+}
+
+#profile label {
+  display:block ;
 }
 
 .ava {
