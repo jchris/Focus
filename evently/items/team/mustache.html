@@ -2,14 +2,14 @@
 <p>This page has a list of every user with their items from the last week. It is designed to enable realtime collaboration during a weekly call type situation.</p>
 <ul class="users">
   {{#users}}
-    <li data-id="{{id}}">
+    <li class="user" data-user="{{name}}">
       <h2>{{name}}</h2>
       <h3>Done in the last week</h3>
-      <ul class="done"></ul>
+      <ul class="sdone"></ul>
       <h3>Active now</h3>
-      <ul class="active"></ul>
+      <ul class="sactive"></ul>
       <h3>Blocked</h3>
-      <ul class="blocked"></ul>
+      <ul class="sblocked"></ul>
     </li>
   {{/users}}
 </ul>

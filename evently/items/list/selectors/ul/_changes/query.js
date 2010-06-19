@@ -24,12 +24,21 @@ function(e) {
     if (params.user) {
       if (params.state) {
         if (params.user != "_all") {
-          return {
-            "view" : "user-state-created",
-            "descending" : true,
-            "endkey" : [params.user, params.state],
-            "startkey" : [params.user, params.state, {}]
-          };        
+          if (params.focus) {
+            return {
+              "view" : "focus-user-state-created",
+              "descending" : true,
+              "endkey" : [params.user, params.state],
+              "startkey" : [params.user, params.state, {}]
+            };            
+          } else {
+            return {
+              "view" : "user-state-created",
+              "descending" : true,
+              "endkey" : [params.user, params.state],
+              "startkey" : [params.user, params.state, {}]
+            };            
+          }
         } else {
           return {
             "view" : "focus-state",
@@ -42,6 +51,7 @@ function(e) {
         if (params.user != "_all") {
           return {
             "view" : "user-created",
+            "reduce" : false,
             "descending" : true,
             "endkey" : [params.user],
             "startkey" : [params.user, {}]

@@ -33,7 +33,7 @@
       });
       return o;
   };
-  
+    $.evently.changesOpts.include_docs = true;
     $.couch.app(function(app) {
       $("#account").evently("account", app);
       $("#profile").evently("profile", app);
