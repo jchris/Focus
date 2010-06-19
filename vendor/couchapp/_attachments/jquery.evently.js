@@ -338,7 +338,7 @@ function $$(node) {
     function changesReq(seq) {
       var url = app.db.uri+"_changes?feed=longpoll&since="+seq;
       if (opts.include_docs) {
-        url = url + "&include_docs=true"
+        url = url + "&include_docs=true";
       }
       $.ajax({
         url: url,

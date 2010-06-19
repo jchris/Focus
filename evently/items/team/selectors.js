@@ -18,10 +18,10 @@ function() {
               }]
             }
           });
-        }
+        },
+        selectors : list.selectors
       }
     };
-    
   return {
     "ul.sdone" : widget,
     "ul.sactive" : widget,
