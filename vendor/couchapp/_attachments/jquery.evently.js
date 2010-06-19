@@ -326,7 +326,7 @@ function $$(node) {
         app.db.changes(null, $.evently.changesOpts).onChange(changeEvent);
       } else {
         // in case you are still on CouchDB 0.11 ;) deprecated.
-        connectToChanges(app, $.evently.changesOpts, changeEvent);
+        connectToChanges(app, changeEvent);
       }
       $.evently.changesDBs[dbName] = true;
     }
@@ -334,10 +334,10 @@ function $$(node) {
   $.evently.followChanges = followChanges;
   // deprecated. use db.changes() from jquery.couch.js
   // this does not have an api for closing changes request.
-  function connectToChanges(app, opts, fun, update_seq) {
+  function connectToChanges(app, fun, update_seq) {
     function changesReq(seq) {
       var url = app.db.uri+"_changes?feed=longpoll&since="+seq;
-      if (opts.include_docs) {
+      if ($.evently.changesOpts.include_docs) {
         url = url + "&include_docs=true";
       }
       $.ajax({
