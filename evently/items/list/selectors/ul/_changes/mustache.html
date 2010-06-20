@@ -1,11 +1,15 @@
-{{#team}}
-<div class="avat">
-  {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
-</div>
-{{/team}}
 {{#items}}
   <li data-id="{{id}}">
     <div class="item {{state}} {{publish}}">
+      {{#pic}}
+        <div class="ava">
+          {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
+        </div>
+      {{/pic}}
+      {{#npic}}
+        <div class="ava">&nbsp;
+        </div>
+      {{/npic}}
       <div class="message">{{{message}}}</div>
     </div>
     <div style="clear:left;"></div>

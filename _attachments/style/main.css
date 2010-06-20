@@ -86,6 +86,7 @@ input[type=text] {
 
 .ava {
   float:left;
+  width:40px;
   margin-right:4px;
 }
 
