@@ -1,9 +1,16 @@
 <div class="item">
+  <div class="ava">
+    {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
+  </div>
   <form>
-    <span style="small">Create a new item:</span>
-    <br/>
     <input type="text" name="message" size=40 value="{{message}}">
-    <input type="submit" value="New">
+    <br/>
+    Set state: <select name="state">
+      {{#states}}
+        <option value="{{state}}" {{selected}}>{{state}}</option>
+      {{/states}}
+    </select>
+    <input type="submit" value="Create new item">
     <span class="saved"></span>
   </form>
 </div>

@@ -3,9 +3,10 @@
   <div class="ava">
     {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
   </div>
+
   <p><a href="#/items/{{ownername}}">browse {{ownername}}'s items</a></p>
   <p><a href="javascript:history.go(-1)">back</a></p>
-  
+  <p><a href="/_utils/document.html?{{dbname}}/{{urlid}}">edit in Futon.</a></p>  
   <form class="state">
     <h2 class="message">{{{lmessage}}} <input type="text" name="message" value="{{message}}"></h2>
     <label>set state

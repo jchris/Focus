@@ -13,5 +13,7 @@ function(doc) {
   doc.gravatar_url = doc.profile.gravatar_url;
   doc.checked = doc.publish ? "checked" : "";
   doc.publish = !doc.publish && "noshare";
+  doc.dbname = $$(this).app.db.name;
+  doc.urlid = encodeURIComponent(doc._id);
   return doc;
 };
