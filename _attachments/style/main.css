@@ -31,6 +31,12 @@ li .message {
   padding:2px;
 }
 
+li .message .state {
+  float:right;
+  font-size:1.5em;
+  font-weight:bold;
+}
+
 input[type=text] {
   font-size:1em;
   width:90%;
