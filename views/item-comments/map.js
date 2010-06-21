@@ -1,5 +1,5 @@
 function(doc) {
   if (doc.comment) {
-    emit(doc.created_at, doc);
+    emit([doc.item_id, doc.created_at], doc);
   }
 }
