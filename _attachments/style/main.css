@@ -37,7 +37,7 @@ input[type=text] {
 }
 
 .item {
-  min-height:40px;
+  min-height:48px;
 }
 
 .details {
@@ -88,6 +88,9 @@ input[type=text] {
   float:left;
   width:40px;
   margin-right:4px;
+/*  background:#eee;*/
+/*  border:4px solid #fff;*/
+  padding:4px;
 }
 
 .ava img {

@@ -1,0 +1,16 @@
+
+  <form>
+    <input type="text" name="message" size=40 value="{{message}}">
+    <br/>
+    Set state: <select name="state">
+      {{#states}}
+        <option value="{{state}}" {{selected}}>{{state}}</option>
+      {{/states}}
+    </select>
+    <input type="hidden" name="_rev" value="{{_rev}}">
+    <input type="hidden" name="_id" value="{{_id}}">
+    <input type="submit" value="Update item">
+    <span class="saved"><a href="#/details/{{_id}}">Details and comments</a></span>
+  </form>
+
+<div style="clear:left;"></div>

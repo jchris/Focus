@@ -2,25 +2,30 @@
   <!-- todo include list view mustache here for consistency, with edit logic displayed below it. -->
   <div class="ava">
     {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
+    <a href="#/items/{{ownername}}">{{ownername}}</a>
   </div>
+  <h2 class="message">{{{lmessage}}}</h2>
 
-  <p><a href="#/items/{{ownername}}">browse {{ownername}}'s items</a></p>
-  <p><a href="javascript:history.go(-1)">back</a></p>
-  <p><a href="/_utils/document.html?{{dbname}}/{{urlid}}">edit in Futon.</a></p>  
   <form class="state">
-    <h2 class="message">{{{lmessage}}} <input type="text" name="message" value="{{message}}"></h2>
-    <label>set state
-    <select name="state">
+    <input type="text" name="message" size=40 value="{{message}}">
+    <br/>
+    Set state: <select name="state">
       {{#states}}
         <option value="{{state}}" {{selected}}>{{state}}</option>
       {{/states}}
     </select>
-    <br/>
-    </label>
-<label>publish to the focus view <input type="checkbox" name="publish" {{checked}}></label>
-    <p><input type="submit" value="Click to Save &rarr;"></p>
+    <label>publish to the focus view <input type="checkbox" name="publish" {{checked}}></label>
+    <input type="hidden" name="_rev" value="{{_rev}}">
+    <input type="hidden" name="_id" value="{{_id}}">
+    <input type="submit" value="Update item">
+    <span class="saved">
   </form>
   <form class="delete"><input type="submit" value="Delete"></form>
+
+  <p><a href="javascript:history.go(-1)">back</a>. <a href="/_utils/document.html?{{dbname}}/{{urlid}}">edit in Futon</a>.</p>
+
+
+ 
   
   
 <p>Target Date</p>
