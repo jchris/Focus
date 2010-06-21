@@ -1,6 +1,11 @@
 function(resp) {
   $.log(resp)
   return {
-    items : [1,2,3,4]
+    items : $.map(resp.rows, function(row) {
+      return {
+        comment : row.value.comment,
+        user : row.value.profile.name
+      }
+    })
   }
 };
