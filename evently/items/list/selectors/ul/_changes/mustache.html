@@ -1,5 +1,5 @@
 {{#items}}
-  <li data-id="{{id}}">
+  <li data-id="{{id}}" data-rev="{{rev}}">
     <div class="item {{state}} {{publish}}">
       {{#pic}}
         <div class="ava">
@@ -10,7 +10,13 @@
         <div class="ava">&nbsp;
         </div>
       {{/npic}}
-      <span class="state">{{state}}</span>
+      <span class="state">
+        <select name="state">
+          {{#states}}
+            <option value="{{state}}" {{selected}}>{{state}}</option>
+          {{/states}}
+        </select>
+      </span>
       <div class="message">{{{message}}}</div>
     </div>
     <div style="clear:left;"></div>
