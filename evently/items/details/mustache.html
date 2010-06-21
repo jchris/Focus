@@ -14,22 +14,24 @@
         <option value="{{state}}" {{selected}}>{{state}}</option>
       {{/states}}
     </select>
-    <label>publish to the focus view <input type="checkbox" name="publish" {{checked}}></label>
+
     <input type="hidden" name="_rev" value="{{_rev}}">
     <input type="hidden" name="_id" value="{{_id}}">
     <input type="submit" value="Update item">
-    <span class="saved">
+    <label>publish to the focus view <input type="checkbox" name="publish" {{checked}}></label>
   </form>
   <form class="delete"><input type="submit" value="Delete"></form>
-
+  <p>State: {{state}}</p>
   <p><a href="javascript:history.go(-1)">back</a>. <a href="/_utils/document.html?{{dbname}}/{{urlid}}">edit in Futon</a>.</p>
 
-
- 
+  <h3>Discuss:</h3>
+ <form class="comment">
+   <input type="hidden" name="post_id" value="{{_id}}">
+   <textarea name="comment" rows="8" cols="40"></textarea>
+  <p><input type="submit" value="Comment &rarr;"></p>
+ </form>
+  <div class="comments"></div>
   
-  
-<p>Target Date</p>
-<p>State: {{state}}</p>
 
 <p>6 Comments</p>
 <p>Add a Comment (if there are no comments yet)</p>
