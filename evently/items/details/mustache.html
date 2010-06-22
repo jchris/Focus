@@ -18,7 +18,8 @@
     <input type="hidden" name="_rev" value="{{_rev}}">
     <input type="hidden" name="_id" value="{{_id}}">
     <input type="submit" value="Update item">
-    <label>publish to the focus view <input type="checkbox" name="publish" {{checked}}></label>
+    <label> <input type="checkbox" name="publish" {{pchecked}}> publish</label>
+    <label> <input type="checkbox" name="blocked" {{bchecked}}> blocked</label>
   </form>
   <form class="delete"><input type="submit" value="Delete"></form>
   <p>State: {{state}}</p>

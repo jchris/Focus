@@ -5,7 +5,8 @@ function(doc) {
   doc.states = slib.selectStates(doc.state);
   doc.lmessage = $.linkify($.mustache.escape(doc.message));
   doc.gravatar_url = doc.profile.gravatar_url;
-  doc.checked = doc.publish ? "checked" : "";
+  doc.bchecked = (doc.blocked || doc.state=="blocked") ? "checked" : "";
+  doc.pchecked = doc.publish ? "checked" : "";
   doc.publish = !doc.publish && "noshare";
   doc.dbname = $$(this).app.db.name;
   doc.urlid = encodeURIComponent(doc._id);

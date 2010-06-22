@@ -14,6 +14,11 @@ function(e) {
       } else {
         doc.publish = false;
       }
+      if ($("[name=blocked]:checked", form).length > 0) {
+        doc.blocked = true;
+      } else {
+        doc.blocked = false;
+      }
       doc._rev = rev; // mvcc!
       doc.message = f.message;
       doc.state = f.state;
