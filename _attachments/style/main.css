@@ -63,17 +63,16 @@ input[type=text] {
   border:2px solid #4d4;
 }
 
-.done {
+.now, .active {
   background-color:#cfb;
 }
-
-.active {
-  background-color:#ff9;
-}
-
-.someday {
+.later, .someday {
   background-color:#fff;
   color:#888;
+}
+.done {
+  background-color:#ddf;
+  color:#444;
 }
 
 .blocked {

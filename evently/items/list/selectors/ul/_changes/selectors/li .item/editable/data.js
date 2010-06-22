@@ -7,16 +7,11 @@ function(e) {
       break;
     }
   };
-  var states = ["open", "active", "done", "blocked", "someday"];
+  var slib = $$(this).app.require("lib/states");
   return {
     _rev : doc._rev,
     _id : doc._id,
     message : doc.message,
-    states : $.map(states, function(state) {
-      return {
-        state : state,
-        selected : state == doc.state && "selected"
-      }
-    })
+    states : slib.selectStates(doc.state)
   };
 };
