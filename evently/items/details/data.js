@@ -1,14 +1,8 @@
 function(doc) {
-  var i, s, statesView = []; states = ["open","done","active","blocked","someday"];
-  for (i=0; i < states.length; i++) {
-    s = {state: states[i]};
-    if (doc.state == states[i]) {
-      s.selected = 'selected="selected"'
-    }
-    statesView.push(s);
-  };
+  var slib = $$(this).app.require("lib/states");
+  
   doc.ownername = doc.profile.name;
-  doc.states = statesView;
+  doc.states = slib.selectStates(doc.state);
   doc.lmessage = $.linkify($.mustache.escape(doc.message));
   doc.gravatar_url = doc.profile.gravatar_url;
   doc.checked = doc.publish ? "checked" : "";
