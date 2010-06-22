@@ -29,6 +29,8 @@ function(data, e) {
       p.pic = n;
       p.npic = !n;
       p.publish = !doc.publish && "noshare";
+      p.blocked = doc.blocked && "blocked";
+      
       return p;
     })
   }

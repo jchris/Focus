@@ -71,12 +71,13 @@ input[type=text] {
   color:#888;
 }
 .done {
-  background-color:#ddf;
+  background-color:#ddf !important;
   color:#444;
 }
 
 .blocked {
   background-color:#fb8;
+  border:2px solid #f00;
 }
 
 #profile {
