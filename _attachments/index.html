@@ -38,12 +38,18 @@
       $("#account").evently("account", app);
       $("#profile").evently("profile", app);
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+      
       $("#account").bind("loggedIn", function(e, r) {
         $("#items").evently("items", app);
         $("#nav").evently("nav", app);
         $.evently.connect("#items","#nav", ["list"]);
         $.pathbinder.begin("/focus");
       });
+      $("#account").bind("loggedOut", function(e, r) {
+        $("#items").evently("items", app);
+        $.pathbinder.begin("/focus");
+      });
+      
     });
   </script>
 </html>
