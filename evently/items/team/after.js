@@ -1,4 +1,4 @@
-function() {
+function(e, p) {
   // set app to connect to changes with include docs (or support upgrade...)
   // filter js is a function to say whether or not you care about an update...
   // maybe there is a way to have it interact with startkey - endkey and the view definition?

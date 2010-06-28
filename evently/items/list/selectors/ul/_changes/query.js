@@ -29,16 +29,16 @@ function(e) {
               return {
                 "view" : "focus-user-state-created",
                 "descending" : true,
-                "endkey" : [params.user, params.state],
-                "startkey" : [params.user, params.state, new Date(new Date() - (24 * 60 * 60 * 7 * 1000))]
-              };              
+                "endkey" : [params.user, params.state, new Date(new Date() - (24 * 60 * 60 * 7 * 1000))],
+                "startkey" : [params.user, params.state, {}]
+              };
             } else {
               return {
                 "view" : "focus-user-state-created",
                 "descending" : true,
                 "endkey" : [params.user, params.state],
                 "startkey" : [params.user, params.state, {}]
-              };              
+              };
             }
           } else {
             return {
