@@ -25,12 +25,21 @@ function(e) {
       if (params.state) {
         if (params.user != "_all") {
           if (params.focus) {
-            return {
-              "view" : "focus-user-state-created",
-              "descending" : true,
-              "endkey" : [params.user, params.state],
-              "startkey" : [params.user, params.state, {}]
-            };            
+            if (params.state == "done") {
+              return {
+                "view" : "focus-user-state-created",
+                "descending" : true,
+                "endkey" : [params.user, params.state],
+                "startkey" : [params.user, params.state, new Date(new Date() - (24 * 60 * 60 * 7 * 1000))]
+              };              
+            } else {
+              return {
+                "view" : "focus-user-state-created",
+                "descending" : true,
+                "endkey" : [params.user, params.state],
+                "startkey" : [params.user, params.state, {}]
+              };              
+            }
           } else {
             return {
               "view" : "user-state-created",

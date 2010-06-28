@@ -24,8 +24,7 @@ function() {
     };
   return {
     "ul.sdone" : widget,
-    "ul.sopen" : widget,
-    "ul.sactive" : widget,
+    "ul.snow" : widget,
     "ul.sblocked" : widget
   };
 };
