@@ -1,15 +1,9 @@
 {{#items}}
   <li data-id="{{id}}" data-rev="{{rev}}">
     <div class="item {{state}} {{publish}} {{blocked}}">
-      {{#pic}}
-        <div class="ava">
-          {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
-        </div>
-      {{/pic}}
-      {{#npic}}
-        <div class="ava">&nbsp;
-        </div>
-      {{/npic}}
+      <div class="ava">
+        {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
+      </div>
       <span class="state">
         <select name="state">
           {{#states}}
