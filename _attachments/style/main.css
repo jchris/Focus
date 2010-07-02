@@ -31,6 +31,10 @@ li .message {
   padding:2px;
 }
 
+input[name=message] {
+  width:90%;
+}
+
 li .state {
   padding:2px;
   float:right;

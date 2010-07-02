@@ -34,21 +34,32 @@
       return o;
   };
     $.evently.changesOpts.include_docs = true;
-    $.couch.app(function(app) {
-      $("#account").evently("account", app);
-      $("#profile").evently("profile", app);
-      $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
-      
-      $("#account").bind("loggedIn", function(e, r) {
-        $("#items").evently("items", app);
-        $("#nav").evently("nav", app);
-        $.evently.connect("#items","#nav", ["list"]);
-        $.pathbinder.begin("/focus");
+    setTimeout(function() {
+      $.couch.app(function(app) {
+        $("#account").evently("account", app);
+        $("#profile").evently("profile", app);
+        $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+
+        var loggedIn = "maybe";
+        $("#account").bind("loggedIn", function(e, r) {
+          if (loggedIn != "maybe") {
+            document.location = ""; //refresh          
+          }
+          loggedIn = "yes";
+          $("#items").evently("items", app);
+          $("#nav").evently("nav", app);
+          $.evently.connect("#items","#nav", ["list"]);
+          $.pathbinder.begin("/focus");
+        });
+        $("#account").bind("loggedOut", function(e, r) {
+          if (loggedIn != "maybe") {
+            document.location = ""; //refresh          
+          }
+          loggedIn = "no";
+          $("#items").evently("items", app);
+          $.pathbinder.begin("/focus");
+        });
       });
-      $("#account").bind("loggedOut", function(e, r) {
-        $("#items").evently("items", app);
-        $.pathbinder.begin("/focus");
-      });
-    });
+    }, 0);
   </script>
 </html>
