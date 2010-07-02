@@ -12,6 +12,8 @@ function(e) {
     _rev : doc._rev,
     _id : doc._id,
     message : doc.message,
-    states : slib.selectStates(doc.state)
+    states : slib.selectStates(doc.state),
+    gravatar_url : doc.profile.gravatar_url,
+    name : doc.profile.name
   };
 };
