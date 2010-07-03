@@ -1,24 +1,34 @@
 function() {
-  var form = $(this),
+  var form = $(this), app = $$(form).app,
     f = form.serializeObject();
-  $$(form).app.db.openDoc(f._id, {
+  function updateItem(doc) {
+    doc.message = f.message;
+    doc.state = f.state;
+    doc._rev = f._rev;
+    doc.edit_at = new Date();
+    doc.edit_by = $$("#account").userCtx.name;
+    app.db.saveDoc(doc, {
+      success : function(r) {
+        $("#profile .saved").html('<span>Updated item: </span><a href="#/details/'+r.id+'">'+doc.message+'</a> ');
+      }
+    });
+  };
+  app.db.openDoc(f._id, {
     success : function(doc) {
       if (f.owner != doc.profile.name) {
-        alert("setting new owner "+f.owner)
-        // load the users doc from the users db
-        // add the profile
-        // save the new doc
+        // get this user's profile from another doc
+        app.view("user-created", {
+          startkey : [f.owner], 
+          limit : 1,
+          reduce : false,
+          success : function(resp) {
+            doc.profile = resp.rows[0].value.profile;
+            updateItem(doc);
+          }
+        });
+      } else {
+        updateItem(doc);
       }
-      doc.message = f.message;
-      doc.state = f.state;
-      doc._rev = f._rev;
-      doc.edit_at = new Date();
-      doc.edit_by = $$("#account").userCtx.name;
-      $$(form).app.db.saveDoc(doc, {
-        success : function(r) {
-          $("#profile .saved").html('<span>Updated item: </span><a href="#/details/'+r.id+'">'+doc.message+'</a> ');
-        }
-      });
     }
   });
   return false;
