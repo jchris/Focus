@@ -16,23 +16,6 @@
   <script src="vendor/couchapp/loader.js"></script>
   <script src="vendor/couchapp/jquery.pathbinder.js"></script>
   <script type="text/javascript" charset="utf-8">
-  $.fn.serializeObject = function()
-  // http://stackoverflow.com/questions/1184624/serialize-form-to-json-with-jquery/1186309#1186309
-  {
-      var o = {};
-      var a = this.serializeArray();
-      $.each(a, function() {
-          if (o[this.name]) {
-              if (!o[this.name].push) {
-                  o[this.name] = [o[this.name]];
-              }
-              o[this.name].push(this.value || '');
-          } else {
-              o[this.name] = this.value || '';
-          }
-      });
-      return o;
-  };
     $.evently.changesOpts.include_docs = true;
     setTimeout(function() {
       $.couch.app(function(app) {
