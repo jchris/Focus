@@ -40,26 +40,13 @@
         $("#profile").evently("profile", app);
         $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
 
-        var loggedIn = "maybe";
-        $("#account").bind("loggedIn", function(e, r) {
-          if (loggedIn != "maybe") {
-            document.location = ""; //refresh          
-          }
-          loggedIn = "yes";
-          $("#items").evently("items", app);
-          $("#nav").evently("nav", app);
-          $.evently.connect("#items","#nav", ["list"]);
-          $.pathbinder.begin("/focus");
-        });
-        $("#account").bind("loggedOut", function(e, r) {
-          if (loggedIn != "maybe") {
-            document.location = ""; //refresh          
-          }
-          loggedIn = "no";
-          $("#items").evently("items", app);
-          $.pathbinder.begin("/focus");
-        });
+        $("#items").evently("items", app);
+
+        $("#nav").evently("nav", app);
+        $.evently.connect("#items","#nav", ["list"]);
+
+        $.pathbinder.begin("/focus");
       });
-    }, 0);
+    }, 75); // wish there was a better way to keep the URL bar from showing loading forever on Android
   </script>
 </html>

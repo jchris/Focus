@@ -4,6 +4,7 @@
       <div class="ava">
         {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
       </div>
+      {{#editable}}
       <span class="state">
         <select name="state">
           {{#states}}
@@ -11,6 +12,7 @@
           {{/states}}
         </select>
       </span>
+      {{/editable}}
       <div class="message">{{{message}}}</div>
     </div>
     <div style="clear:left;"></div>

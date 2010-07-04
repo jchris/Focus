@@ -6,6 +6,7 @@ function(data, e) {
   return {
     // move this code to the view for better performance due to less data on disk.  
     gravatar_url : data.rows[0] && data.rows[0].value.profile.gravatar_url,
+    editable : !!$$("#account").userCtx,
     items : $.map(data.rows, function(r) {
       var doc = r.value;
       p = doc.profile;
@@ -17,7 +18,6 @@ function(data, e) {
       p.rev = doc._rev;
       p.publish = !doc.publish && "noshare";
       p.blocked = doc.blocked && "blocked";
-      
       return p;
     })
   }

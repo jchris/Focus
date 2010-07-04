@@ -1,5 +1,4 @@
 function(resp) {
-  $.log(resp)
   return {
     items : $.map(resp.rows, function(row) {
       return {
