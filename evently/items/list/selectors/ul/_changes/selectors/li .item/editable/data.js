@@ -8,7 +8,7 @@ function(e) {
     }
   };
   var slib = $$(this).app.require("lib/states");
-  return {
+  var v =  {
     _rev : doc._rev,
     _id : doc._id,
     message : doc.message,
@@ -16,4 +16,7 @@ function(e) {
     gravatar_url : doc.profile.gravatar_url,
     name : doc.profile.name
   };
+  v.bchecked = doc.blocked ? "checked" : "";
+  v.pchecked = doc.publish ? "checked" : "";
+  return v;
 };

@@ -1,10 +1,13 @@
 function() {
   var form = $(this), app = $$(form).app,
     f = form.serializeObject();
+  $.log(f)
   function updateItem(doc) {
     doc.message = f.message;
     doc.state = f.state;
     doc._rev = f._rev;
+    doc.published = f.published == "on";
+    doc.blocked = f.blocked == "on";
     doc.edit_at = new Date();
     doc.edit_by = $$("#account").userCtx.name;
     app.db.saveDoc(doc, {
