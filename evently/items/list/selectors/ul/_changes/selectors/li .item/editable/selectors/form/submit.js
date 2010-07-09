@@ -1,7 +1,6 @@
 function() {
   var form = $(this), app = $$(form).app,
     f = form.serializeObject();
-  $.log(f)
   function updateItem(doc) {
     doc.message = f.message;
     doc.state = f.state;
