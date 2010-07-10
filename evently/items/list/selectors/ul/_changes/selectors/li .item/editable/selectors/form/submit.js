@@ -11,7 +11,7 @@ function() {
     doc.edit_by = $$("#account").userCtx.name;
     app.db.saveDoc(doc, {
       success : function(r) {
-        $("#profile .saved").html('<span>Updated item: </span><a href="#/details/'+r.id+'">'+doc.message+'</a> ');
+        $("#profile .saved").html('<span/>').text("Updated: "+doc.message);
       }
     });
   };
