@@ -1,7 +1,8 @@
-function(e) {
-  var form = $(this), app = $$(form).app,
+function() {
+  var form = $(this).parents("form"), app = $$(form).app,
     f = form.serializeObject();
   function updateItem(doc) {
+    doc._deleted = true;
     doc.message = f.message;
     doc.state = f.state;
     doc._rev = f._rev;
@@ -11,7 +12,7 @@ function(e) {
     doc.edit_by = $$("#account").userCtx.name;
     app.db.saveDoc(doc, {
       success : function(r) {
-        $("#profile .saved").html('<span/>').text("Updated: "+doc.message);
+        $("#profile .saved").html('<span/>').text("Deleted: "+doc.message);
       }
     });
   };
