@@ -7,9 +7,7 @@
   </head>
   <body>
     <div id="account"></div>
-
-    <h1><a href="index.html">Focus</a></h1>
-    <div id="nav"></div>
+    <h1><a href="index.html">Focus</a>: <span id="nav"></span></h1>
     <div id="profile"></div>
     <div id="items"></div>
   </body>
@@ -21,13 +19,11 @@
       $.couch.app(function(app) {
         $("#account").evently("account", app);
         $("#profile").evently("profile", app);
+        $("#nav").evently("nav", app);
         $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+        $.evently.connect("#account","#nav", ["loggedIn","loggedOut"]);
 
         $("#items").evently("items", app);
-
-        $("#nav").evently("nav", app);
-        $.evently.connect("#items","#nav", ["list"]);
-
         $.pathbinder.begin("/focus");
       });
     }, 100); // wish there was a better way to keep the URL bar from showing loading forever on Android
