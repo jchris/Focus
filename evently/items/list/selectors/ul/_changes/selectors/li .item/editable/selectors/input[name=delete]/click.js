@@ -2,7 +2,7 @@ function() {
   var form = $(this).parents("form"), app = $$(form).app,
     f = form.serializeObject();
   function updateItem(doc) {
-    doc._deleted = true;
+    doc._deleted = true; // the only line in here that's different from submit.js :(
     doc.message = f.message;
     doc.state = f.state;
     doc._rev = f._rev;
