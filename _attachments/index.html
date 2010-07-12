@@ -22,8 +22,13 @@
         $("#nav").evently("nav", app);
         $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
         $.evently.connect("#account","#nav", ["loggedIn","loggedOut"]);
-
         $("#items").evently("items", app);
+        $("#account").bind("loggedIn", function() {
+          $("body").trigger("evently-changes-"+app.db.name);
+        });
+        $("#account").bind("loggedOut", function() {
+          $("body").trigger("evently-changes-"+app.db.name);
+        });
         $.pathbinder.begin("/focus");
       });
     }, 100); // wish there was a better way to keep the URL bar from showing loading forever on Android
